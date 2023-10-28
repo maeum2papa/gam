@@ -5,23 +5,13 @@ class Solution {
         int answer = 0;
         int half = (int) nums.length/2;
         
-        HashMap<Integer, Integer> poketMons = new HashMap<>();
+        HashSet<Integer> poketMons = new HashSet<>();
         
         for(int num : nums){
-            if(poketMons.get(num) == null){
-                poketMons.put(num,1);    
-            }
+            poketMons.add(num);    
         }
         
-        
-        if(poketMons.size() > half){
-            answer = half;
-        }else{
-            answer = poketMons.size();
-        }
-        
-                                     
-        return answer;
+        return answer = (poketMons.size() > half)?half:poketMons.size();
     }
 }
 
